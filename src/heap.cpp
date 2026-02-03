@@ -3,9 +3,15 @@
 
 #include <thread>
 
+<<<<<<< HEAD
 #include "../include/bstdl/libstdc/libstdc.hpp"
 #include "../include/bstdl/libstdc/page.hpp"
 #include "../include/bstdl/as_bstd.hpp"
+=======
+#include "../include/bstd/libstdc/libstdc.hpp"
+#include "../include/bstd/libstdc/page.hpp"
+#include "../include/bstd/heap.hpp"
+>>>>>>> b4d1eb9 (Finished spinlocks)
 
 
 constexpr size_t HEAP_ALIGNMENT = 16;
