@@ -18,7 +18,7 @@
 #include "bstdl/as_bstd.hpp"
 
 #ifndef linx
-BOOL EnableLargePages(void)
+static BOOL EnableLargePages(void)
 {
     HANDLE token;
     TOKEN_PRIVILEGES tp;

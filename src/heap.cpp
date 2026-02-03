@@ -42,7 +42,7 @@ namespace bstdl {
 namespace heap {
 
 
-void maintainer_thread() {
+static void maintainer_thread() {
     return;  // to implement later, with intelligent prefetching
 }
 
@@ -62,7 +62,7 @@ void init() {
     return;
 }
 
-void merge_together(HeapChunk *start, bool clear_available = true) {
+static void merge_together(HeapChunk *start, bool clear_available = true) {
     HeapChunk *current = start;
     HeapChunk *last = nullptr;
 
