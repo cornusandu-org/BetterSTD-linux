@@ -1,13 +1,16 @@
-# BetterSTD
-#### An extension of the C++ Standard Library
+# BetterSTD-linux (Better
+#### An extension of the C++ Standard Library, recommended for Linux
 
 ---
 
 > [!IMPORTANT]  
-> BetterSTD is **not** a replacement for the default standard library, nor is it meant to be. It is simply an extension meant to be used alongside the standard library.
+> BetterSTD-linux is **not** a replacement for the default standard library, nor is it meant to be. It is simply an extension meant to be used alongside the standard library.
+
+> [!TIP]
+> BetterSTD-linux contains certain functions that only work on Linux/UNIX/Posix. If you want a cross-platform-only version, check out [BetterSTDL (Original)](https://github.com/cornusandu-org/BetterSTD).
 <br>
 
-## bstd/libstdc
+## bstdl/libstdc
 BetterSTD also provides some re-implementations of libstdc that aim to be cross-platform. These functions are:
 * `POINT alloc_mem(POINT base, size_t size)`: mmap / VirtualAlloc
 * `Page alloc_page(POINT base, PageSize size = PageSize::NORMAL)`: mmap / VirtualAlloc (for a single, entire page)
@@ -41,14 +44,14 @@ The MemBehaviour values (combine with `|`) are: `MemBehaviour::NOCACHE`, `MemBeh
 > `MemBehaviour::NOCACHE` and `MemBehaviour::WRITECOMBINE` can only be fully implemented on Windows, but are "simulated" on Linux via `madvise()`.
 
 You will also have top-level names **replacing** those of `windows.h` with cross-platform alternatives:
-* `POINT` -> `bstd::POINT` -> `bstd::Pointer`
-* `BOOL` -> `bstd::BOOL` -> `bstd::uint8_t` -> `unsigned char`
-* `PDWORD` -> `bstd::luint*` -> `long unsigned int*`
+* `POINT` -> `bstdl::POINT` -> `bstdl::Pointer`
+* `BOOL` -> `bstdl::BOOL` -> `bstdl::uint8_t` -> `unsigned char`
+* `PDWORD` -> `bstdl::luint*` -> `long unsigned int*`
 
 Additionally, some aliases for ease-of-use:
-* `u8` -> `bstd::uint8_t` -> `unsigned char`
+* `u8` -> `bstdl::uint8_t` -> `unsigned char`
 * `u16` -> `std::uint16_t`
-* `u32` -> `bstd::uint32_t` -> `std::uint32_t`
+* `u32` -> `bstdl::uint32_t` -> `std::uint32_t`
 * `u64` -> `std::uint64_t`
 * `int8` -> `signed char`
 * `int16` -> `std::int16_t`
@@ -62,12 +65,12 @@ Additionally, some aliases for ease-of-use:
 * `i16` -> `int16` -> `std::int16_t`
 * `i32` -> `int32` -> `std::int32_t`
 * `i64` -> `int64` -> `std::int64_t`
-* `byte` -> `u8` -> `bstd::uint8_t` -> `unsigned char`
+* `byte` -> `u8` -> `bstdl::uint8_t` -> `unsigned char`
 * `sbyte` -> `int8` -> `signed char`
 * `schar` -> `i8` -> `int8` -> `signed char`
-* `cstring` -> `bstd::cstring` -> `char*`
-* `cstr` -> `cstring` -> `bstd::cstring` -> `char*`
-* `luint` -> `bstd::luint` -> `long unsigned int`
+* `cstring` -> `bstdl::cstring` -> `char*`
+* `cstr` -> `cstring` -> `bstdl::cstring` -> `char*`
+* `luint` -> `bstdl::luint` -> `long unsigned int`
 * `uptr` -> `uintptr_t`
 * `qword_t` -> `u64` -> `std::uint64_t`
 * `sqword_t` -> `i64` -> `int64` -> `std::int64_t`
@@ -76,18 +79,18 @@ Additionally, some aliases for ease-of-use:
 > These lists may be expanded in the future, and aliases may change.
 <br>
 
-## bstd/rand
+## bstdl/rand
 
 BetterSTD's `rand` headers provide:
-* ~~`bstd::random::uniform`: Random value in the range of [0, 1]~~ (deprecated)
-* ~~`bstd::random::randint`: Random value in the range of [a, b]~~ (deprecated)
-* `bstd::random::Generator`
+* ~~`bstdl::random::uniform`: Random value in the range of [0, 1]~~ (deprecated)
+* ~~`bstdl::random::randint`: Random value in the range of [a, b]~~ (deprecated)
+* `bstdl::random::Generator`
     * `double Generator::uniform()`: Random value in the range of [0, 1)
     * `double* Generator::generate_batch(size_t count)`: Returns an array of `count` random values in the range of [0, 1)
     * `size_t Generator::randint(size_t low, size_t high)`: Random value in the range of [low, high)
 <br>
 
-## bstd/sort
+## bstdl/sort
 BetterSTD's `sort` header provides:
 * `sort`: A multi-threaded implementation of quick sort, intended for really large arrays (>1024 items)
 <br><br><br><br>
