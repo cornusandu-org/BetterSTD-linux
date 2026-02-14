@@ -1,4 +1,4 @@
-#include "rand.hpp"
+#include "../include/bstdl/rand.hpp"
 
 #include <cstdlib>
 #include <ctime>
@@ -18,7 +18,7 @@ namespace {
     rng_init init_guard;
 }
 
-namespace bstd {
+namespace bstdl {
 namespace random {
 
     [[deprecated]] double uniform() {

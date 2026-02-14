@@ -4,8 +4,6 @@
 #include "os.hpp"
 #include "conv.hpp"
 
-#define PDWORD bstd::PDWORD
-
 namespace bstdl {
     class Pointer {
         public:

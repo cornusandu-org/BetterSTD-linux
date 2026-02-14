@@ -3,15 +3,10 @@
 #include <cstdint>
 #include <cstdlib>
 
-class Pointer;
-
 #include "page.hpp"
 #include "memprot.hpp"
 #include "os.hpp"
 #include "conv.hpp"
-
-#define POINT bstd::POINT
-#define BOOL bstd::BOOL
 
 POINT alloc_mem(POINT base, size_t size);
 Page alloc_page(POINT base, PageSize size = PageSize::NORMAL);

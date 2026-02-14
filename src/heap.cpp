@@ -3,8 +3,9 @@
 
 #include <thread>
 
-#include "../include/bstd/libstdc/libstdc.hpp"
-#include "../include/bstd/libstdc/page.hpp"
+#include "../include/bstdl/libstdc/libstdc.hpp"
+#include "../include/bstdl/libstdc/page.hpp"
+#include "../include/bstdl/as_bstd.hpp"
 
 
 constexpr size_t HEAP_ALIGNMENT = 16;
@@ -21,7 +22,7 @@ struct alignas(32) HeapChunk {
     HeapChunk* next;
 };
 
-HeapChunk alignas(64) start;
+alignas(64) HeapChunk start;
 
 char INIT_CALLED = 0;
 
@@ -31,7 +32,7 @@ char INIT_CALLED = 0;
 
 
 
-namespace bstd {
+namespace bstdl {
 namespace heap {
 
 
@@ -104,7 +105,7 @@ void *alloc(size_t size) {
             return current->base;
         }
         if (current->next == nullptr) {
-            bstd::Pointer p = bstd::Pointer(nullptr);
+            bstdl::Pointer p = bstdl::Pointer(nullptr);
             Page page = alloc_page(p, PageSize::LARGE);
             if (page.location.isNull()) exit(1);
 

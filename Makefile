@@ -17,7 +17,7 @@ all: build
 	@{ $(CAR) rcs bstdl.a $(shell find ./tmp -name "*.o") 2>rcs.log; } || { printf "[-] Failed to create static archive\n\n"; cat rcs.log; exit 1; } 
 	@printf "[+] Created static archive         \n"
 	@mkdir -p dist
-	@mv bstd.a dist/bstdl.a
+	@mv bstdl.a dist/bstdl.a
 
 build:
 	@mkdir -p tmp
@@ -29,7 +29,7 @@ build:
 	done
 
 devtest:
-	@$(CC) tests/test.cpp dist/bstd_linux.a -Iinclude -o test -O0
+	@$(CC) tests/test.cpp dist/bstdl.a -Iinclude -o test -O0
 	
 	@if ./test; then \
 	    printf "\n\n\nTests succeeded/passed\n"; \

@@ -4,10 +4,11 @@
 #include <cstdint>
 #include <stdlib.h>
 #include <vector>
-#include "bstd/re_printf.hpp"
-#include "bstd/memory.hpp"
+#include "bstdl/re_printf.hpp"
+#include "bstdl/memory.hpp"
+#include "bstdl/as_bstd.hpp"
 
-using namespace bstd::mem;
+using namespace bstdl::mem;
 
 /* write one char */
 static void _putc(char c) {
@@ -45,7 +46,7 @@ static void c_itoa(intptr_t value, char* buf, int base) {
 }
 
 /* minimal printf */
-namespace bstd {
+namespace bstdl {
 char core_printf(void(*putc)(char), void(*puts)(const char*), const char* fmt, va_list ap) {
     char buf[256];
 

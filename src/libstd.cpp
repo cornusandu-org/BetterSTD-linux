@@ -14,7 +14,8 @@
 #define linx 1
 #endif
 
-#include "bstd/libstdc/libstdc.hpp"
+#include "bstdl/libstdc/libstdc.hpp"
+#include "bstdl/as_bstd.hpp"
 
 #ifndef linx
 BOOL EnableLargePages(void)
@@ -41,27 +42,6 @@ BOOL EnableLargePages(void)
 #else
 #include <sys/mman.h>
 #endif
-
-//constexpr MemProtect operator|(MemProtect a, MemProtect b) noexcept
-//{
-//    return static_cast<MemProtect>(
-//        static_cast<size_t>(a) | static_cast<size_t>(b)
-//    );
-//}
-//
-//constexpr MemProtect operator&(MemProtect a, MemProtect b) noexcept
-//{
-//    return static_cast<MemProtect>(
-//        static_cast<size_t>(a) & static_cast<size_t>(b)
-//    );
-//}
-//
-//constexpr MemProtect operator~(MemProtect a) noexcept
-//{
-//    return static_cast<MemProtect>(
-//        ~static_cast<size_t>(a)
-//    );
-//}
 
 bstd::Pointer::Pointer(): p((void*)0) {};
 bstd::Pointer::Pointer(void* p): p(p) {};

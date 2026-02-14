@@ -6,7 +6,7 @@ namespace bstdl {
     class Pointer;
 
     typedef long unsigned int luint;
-    typedef bstd::Pointer POINT;
+    typedef bstdl::Pointer POINT;
     typedef std::uint32_t uint32_t;
     typedef luint* PDWORD;
     typedef unsigned char uint8_t;
@@ -14,13 +14,13 @@ namespace bstdl {
     typedef char* cstring;
 }
 
-#define POINT bstd::POINT
-#define BOOL bstd::BOOL
-#define PDWORD bstd::PDWORD
+#define POINT bstdl::POINT
+#define BOOL bstdl::BOOL
+#define PDWORD bstdl::PDWORD
 
-using u8 = bstd::uint8_t;
+using u8 = bstdl::uint8_t;
 using u16 = std::uint16_t;
-using u32 = bstd::uint32_t;
+using u32 = bstdl::uint32_t;
 using u64 = std::uint64_t;
 using int8 = signed char;
 using int16 = std::int16_t;

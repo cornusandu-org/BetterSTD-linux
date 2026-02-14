@@ -1,0 +1,7 @@
+./src/rand.cpp: In function ‘uint64_t bstdl::random::randint(uint64_t, uint64_t)’:
+./src/rand.cpp:34:27: warning: ‘double bstdl::random::uniform()’ is deprecated [-Wdeprecated-declarations]
+   34 |         double u = uniform();
+      |                    ~~~~~~~^~
+./src/rand.cpp:24:27: note: declared here
+   24 |     [[deprecated]] double uniform() {
+      |                           ^~~~~~~
