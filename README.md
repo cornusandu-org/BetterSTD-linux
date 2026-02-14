@@ -8,6 +8,9 @@
 
 > [!TIP]
 > BetterSTD-linux contains certain functions that only work on Linux/UNIX/Posix. If you want a cross-platform-only version, check out [BetterSTDL (Original)](https://github.com/cornusandu-org/BetterSTD).
+
+> [!NOTE]
+> BetterSTD-linux is only guaranteed to work with GCC/Clang.
 <br>
 
 ## bstdl/libstdc
@@ -95,3 +98,41 @@ BetterSTD's `sort` header provides:
 * `sort`: A multi-threaded implementation of quick sort, intended for really large arrays (>1024 items)
 <br><br><br><br>
 <p align="center">© Copyright 2025-2026 cornusandu, Licensed under the <b>MIT License</b></p>
+
+## bstdl/error
+Simply use the `BUG_ON(condition)` macro the opposite of how you would with an assertion. This will fail if the condition is true.
+
+Upon fail, BUG_ON() will output the file, function, line number, and a stack trace.
+
+> [!TIP]
+> For the stack trace to be meaningful, you have to compile with `-rdynamic`, and (optionally) with `-g`
+
+This is what a BUG_ON(1) call looks like without `-rdynamic` and `-g`:
+```
+Assertion failed: `!(1)`.
+In BUG_ON.cpp, at int main():4
+
+Stack frame:
+./a(+0x11cf) [0x5ee5340d21cf]
+./a(+0x12f9) [0x5ee5340d22f9]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29ca8) [0x7b1db72e5ca8]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x85) [0x7b1db72e5d65]
+./a(+0x10e1) [0x5ee5340d20e1]
+Aborted
+```
+
+This is what a BUG_ON(1) call looks like with `-rdynamic -g`:
+```
+Assertion failed: `!(1)`.
+In BUG_ON.cpp, at int main():4
+
+Stack frame:
+./a(_Z16print_stacktracev+0x26) [0x595f0d5f81cf]
+./a(main+0x90) [0x595f0d5f82f9]
+/lib/x86_64-linux-gnu/libc.so.6(+0x29ca8) [0x7733d2005ca8]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x85) [0x7733d2005d65]
+./a(_start+0x21) [0x595f0d5f80e1]
+Aborted
+```
+
+Please note that debugging symbols (`-g`) are not always guaranteed to make a difference.
