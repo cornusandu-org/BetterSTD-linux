@@ -6,7 +6,7 @@
 
 #define PDWORD bstd::PDWORD
 
-namespace bstd {
+namespace bstdl {
     class Pointer {
         public:
                 Pointer();
@@ -30,7 +30,7 @@ enum class PageSize {
 };
 
 struct Page {
-    bstd::Pointer location;
+    bstdl::Pointer location;
     PageSize size;
     _MemProtect prot = MemProtect::READ | MemProtect::WRITE;
     _MemBehaviour behaviour = 0;

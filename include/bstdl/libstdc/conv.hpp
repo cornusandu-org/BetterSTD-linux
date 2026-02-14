@@ -2,7 +2,7 @@
 
 #include <cstdint>
 
-namespace bstd {
+namespace bstdl {
     class Pointer;
 
     typedef long unsigned int luint;
@@ -37,9 +37,9 @@ using i64 = int64;
 using byte = u8;
 using sbyte = int8;
 using schar = i8;
-using cstring = bstd::cstring;
+using cstring = bstdl::cstring;
 using cstr = cstring;
-using luint = bstd::luint;
+using luint = bstdl::luint;
 using uptr = uintptr_t;
 using qword_t = u64;
 using sqword_t = i64;

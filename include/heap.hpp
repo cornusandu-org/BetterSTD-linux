@@ -2,7 +2,7 @@
 
 #include <cstdlib>
 
-namespace bstd {
+namespace bstdl {
 namespace heap {
 void init();
 void *alloc(size_t size);

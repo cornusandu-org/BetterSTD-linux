@@ -2,7 +2,7 @@
 #include <cstdint>
 #include <cstdlib>
 
-namespace bstd {
+namespace bstdl {
 namespace random {
 
     // Core RNG API
