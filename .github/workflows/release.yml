@@ -91,7 +91,7 @@ jobs:
       - name: Build binaries
         run: |
           make
-          ls -la ./dist/bstd_linux.a ./dist/bstd_win.a
+          ls -la ./dist/bstdl.a
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
@@ -116,5 +116,4 @@ jobs:
 
             </details>
           files: |
-            dist/bstd_linux.a
-            dist/bstd_win.a
+            dist/bstdl.a
