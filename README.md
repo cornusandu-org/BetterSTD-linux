@@ -7,7 +7,7 @@
 > BetterSTD-linux is **not** a replacement for the default standard library, nor is it meant to be. It is simply an extension meant to be used alongside the standard library.
 
 > [!TIP]
-> BetterSTD-linux contains certain functions that only work on Linux/UNIX/Posix. If you want a cross-platform-only version, check out [BetterSTDL (Original)](https://github.com/cornusandu-org/BetterSTD).
+> BetterSTD-linux contains certain functions that only work on Linux/UNIX/Posix. If you want a cross-platform-only version, check out [BetterSTD (Original)](https://github.com/cornusandu-org/BetterSTD).
 
 > [!NOTE]
 > BetterSTD-linux is only guaranteed to work with GCC/Clang.
