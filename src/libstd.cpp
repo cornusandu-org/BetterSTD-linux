@@ -18,7 +18,7 @@
 #include "bstdl/as_bstd.hpp"
 
 #ifndef linx
-BOOL EnableLargePages(void)
+static BOOL EnableLargePages(void)
 {
     HANDLE token;
     TOKEN_PRIVILEGES tp;
@@ -41,6 +41,19 @@ BOOL EnableLargePages(void)
 
 #else
 #include <sys/mman.h>
+
+#ifndef MAP_HUGE_SHIFT
+#define MAP_HUGE_SHIFT 26
+#endif
+
+#ifndef MAP_HUGE_2MB
+#define MAP_HUGE_2MB (21 << MAP_HUGE_SHIFT)
+#endif
+
+#ifndef MAP_HUGE_1GB
+#define MAP_HUGE_1GB (30 << MAP_HUGE_SHIFT)
+#endif
+
 #endif
 
 bstd::Pointer::Pointer(): p((void*)0) {};
@@ -72,7 +85,7 @@ POINT alloc_mem(POINT base, size_t size) {
 Page alloc_page(POINT base, PageSize size) {
     #ifdef linx
 
-    void* mem = mmap((void*)base, (size_t)size, PROT_READ | PROT_WRITE | PROT_EXEC, MAP_PRIVATE | MAP_ANONYMOUS | (((size_t)size > 4096) ? (MAP_HUGETLB | ((size_t)size > 2097152 ? MAP_HUGE_1GB : MAP_HUGE_2MB)) : 0), -1, 0);
+    void* mem = mmap((void*)base, (size_t)size, PROT_READ | PROT_WRITE | PROT_EXEC, MAP_PRIVATE | MAP_ANONYMOUS | (((size_t)size > 4096) ? (MAP_HUGETLB | ((size_t)size > (size_t)MAP_HUGE_2MB ? MAP_HUGE_1GB : MAP_HUGE_2MB)) : 0), -1, 0);
 
     Page page{
         .location = bstd::Pointer(mem),
