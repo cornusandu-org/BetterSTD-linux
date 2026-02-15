@@ -1,4 +1,4 @@
-# BetterSTD-linux (Better
+# BetterSTD-linux (BetterSTDL)
 #### An extension of the C++ Standard Library, recommended for Linux
 
 ---
