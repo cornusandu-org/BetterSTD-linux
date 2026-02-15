@@ -96,8 +96,7 @@ BetterSTD's `rand` headers provide:
 ## bstdl/sort
 BetterSTD's `sort` header provides:
 * `sort`: A multi-threaded implementation of quick sort, intended for really large arrays (>1024 items)
-<br><br><br><br>
-<p align="center">© Copyright 2025-2026 cornusandu, Licensed under the <b>MIT License</b></p>
+<br>
 
 ## bstdl/error
 Simply use the `BUG_ON(condition)` macro the opposite of how you would with an assertion. This will fail if the condition is true.
@@ -136,3 +135,5 @@ Aborted
 ```
 
 Please note that debugging symbols (`-g`) are not always guaranteed to make a difference.
+<br><br><br><br>
+<p align="center">© Copyright 2026 cornusandu, Licensed under the <b>MIT License</b></p>
