@@ -15,6 +15,7 @@
 
 <details>
 <summary><h2>bstdl/libstdc</h2></summary>
+
 BetterSTD also provides some re-implementations of libstdc that aim to be cross-platform. These functions are:
 * `POINT alloc_mem(POINT base, size_t size)`: mmap / VirtualAlloc
 * `Page alloc_page(POINT base, PageSize size = PageSize::NORMAL)`: mmap / VirtualAlloc (for a single, entire page)
@@ -99,6 +100,7 @@ BetterSTD's `rand` headers provide:
 
 <details>
 <summary><h2>bstdl/sort</h2></summary>
+    
 BetterSTD's `sort` header provides:
 * `sort`: A multi-threaded implementation of quick sort, intended for really large arrays (>1024 items)
 </details>
@@ -106,6 +108,7 @@ BetterSTD's `sort` header provides:
 
 <details>
 <summary><h2>bstdl/error</h2></summary>
+    
 Simply use the `BUG_ON(condition)` macro the opposite of how you would with an assertion. This will fail if the condition is true.
 
 Upon fail, BUG_ON() will output the file, function, line number, and a stack trace.
