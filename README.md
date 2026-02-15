@@ -13,7 +13,8 @@
 > BetterSTD-linux is only guaranteed to work with GCC/Clang.
 <br>
 
-## bstdl/libstdc
+<details>
+<summary><h2>bstdl/libstdc</h2></summary>
 BetterSTD also provides some re-implementations of libstdc that aim to be cross-platform. These functions are:
 * `POINT alloc_mem(POINT base, size_t size)`: mmap / VirtualAlloc
 * `Page alloc_page(POINT base, PageSize size = PageSize::NORMAL)`: mmap / VirtualAlloc (for a single, entire page)
@@ -80,9 +81,11 @@ Additionally, some aliases for ease-of-use:
 
 > [!NOTE]
 > These lists may be expanded in the future, and aliases may change.
+</details>
 <br>
 
-## bstdl/rand
+<details>
+<summary><h2>bstdl/rand</h2></summary>
 
 BetterSTD's `rand` headers provide:
 * ~~`bstdl::random::uniform`: Random value in the range of [0, 1]~~ (deprecated)
@@ -91,14 +94,18 @@ BetterSTD's `rand` headers provide:
     * `double Generator::uniform()`: Random value in the range of [0, 1)
     * `double* Generator::generate_batch(size_t count)`: Returns an array of `count` random values in the range of [0, 1)
     * `size_t Generator::randint(size_t low, size_t high)`: Random value in the range of [low, high)
+</details>
 <br>
 
-## bstdl/sort
+<details>
+<summary><h2>bstdl/sort</h2></summary>
 BetterSTD's `sort` header provides:
 * `sort`: A multi-threaded implementation of quick sort, intended for really large arrays (>1024 items)
+</details>
 <br>
 
-## bstdl/error
+<details>
+<summary><h2>bstdl/error</h2></summary>
 Simply use the `BUG_ON(condition)` macro the opposite of how you would with an assertion. This will fail if the condition is true.
 
 Upon fail, BUG_ON() will output the file, function, line number, and a stack trace.
@@ -135,5 +142,6 @@ Aborted
 ```
 
 Please note that debugging symbols (`-g`) are not always guaranteed to make a difference.
+</details>
 <br><br><br><br>
 <p align="center">© Copyright 2026 cornusandu, Licensed under the <b>MIT License</b></p>
